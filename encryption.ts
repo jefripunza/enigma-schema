@@ -1,7 +1,7 @@
 import CryptoJS from "crypto-js";
 
 // Helper functions for common tasks
-export function hashKey(key: string): string {
+function hashKey(key: string): string {
   return CryptoJS.SHA256(key).toString(CryptoJS.enc.Hex);
 }
 
@@ -45,8 +45,8 @@ function applyMethod(
   } else if (layer.key) {
     const key = layer.key();
     return isEncrypt
-      ? encryptMethod(layer.method, key, text)
-      : decryptMethod(layer.method, key, text);
+      ? encryptMethod(layer.method, hashKey(key), text)
+      : decryptMethod(layer.method, hashKey(key), text);
   }
   throw new Error(`Key function missing for method: ${layer.method}`);
 }

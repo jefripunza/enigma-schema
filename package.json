@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "bun run --watch ./index.ts"
+    "start": "clear && bun run --watch ./index.ts"
   },
   "dependencies": {
     "crypto-js": "^4.2.0"
