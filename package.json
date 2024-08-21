@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "bun run --watch ./index.ts"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2"
+  }
+}
